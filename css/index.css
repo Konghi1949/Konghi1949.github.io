@@ -5524,7 +5524,7 @@ blockquote.pullquote.right {
   }
 }
 [data-theme='dark'] {
-  --global-bg: #0d0d0d;
+  --global-bg: rgba(13,13,13,0.651);
   --font-color: rgba(255,255,255,0.7);
   --hr-border: rgba(255,255,255,0.4);
   --hr-before-color: rgba(255,255,255,0.7);
@@ -5538,7 +5538,7 @@ blockquote.pullquote.right {
   --tab-botton-color: rgba(255,255,255,0.7);
   --tab-button-hover-bg: #383838;
   --tab-button-active-bg: #121212;
-  --card-bg: #121212;
+  --card-bg: rgba(18,18,18,0.651);
   --sidebar-bg: #121212;
   --btn-hover-color: #787878;
   --btn-color: rgba(255,255,255,0.7);
