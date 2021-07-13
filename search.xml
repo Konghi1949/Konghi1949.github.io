@@ -3,7 +3,7 @@
   <entry>
     <title>你好，天物小站2.0</title>
     <url>/2021/06/21/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E5%A4%A9%E7%89%A9%E5%B0%8F%E7%AB%992-0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h3><p>在几个月前搭建的天物小站1.0（Notion + nextjs-notion-starter-kit + vercal搭建），最近不知道为什么经常性的上不去，所以才想到使用hexo，虽然1.0因为是用notion的记东西十分方便，不过上不去就十分的蛋疼了，所有这就是天物小站2.0的来源</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h3><p>在几个月前搭建的天物小站1.0（Notion + nextjs-notion-starter-kit + vercal搭建），最近不知道为什么经常性的上不去，所以才想到使用hexo，虽然1.0因为是用notion的记东西十分方便，不过上不去就十分的蛋疼了，所有这就是天物小站2.0的来源</p>
 <h3 id="关于2-0"><a href="#关于2-0" class="headerlink" title="关于2.0"></a>关于2.0</h3><ul>
 <li>hexo(butterfly) + github + 域名</li>
 <li>图床gitee + PicGo</li>
@@ -19,60 +19,6 @@
 ]]></content>
       <tags>
         <tag>天物的碎碎念</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在hexo搭建时踏过的一些坑——CNAME与hexo d</title>
-    <url>/2021/06/22/%E5%9C%A8hexo%E6%90%AD%E5%BB%BA%E6%97%B6%E8%B8%8F%E8%BF%87%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="CNAME"><a href="#CNAME" class="headerlink" title="CNAME"></a>CNAME</h3><p>在<code>hexo d</code>上传我们的hexo项目至Github或者Gitee后还需要设置page为自己需要的域名，例我的域名为<code>sut-blog.top</code>设置在我的源码Github.io项目的Pages：<img src="https://gitee.com/konghi1949/my_img/raw/master/img/image-20210622193051719.png" alt="image-20210622193051719"></p>
-<p>此时会在项目下生成一个<code>CNAME</code>，内容为我的域名，项目成功使用我的域名登录，yes！！！但当我以为一切都会顺利，在本地写第一篇博客并<code>hexo g &amp; hexo d</code>，访问它时挂了，然后返回github一看，CNAME不见了，需要在Pages重新设置（我的天，如果每次更新都需要设置Pages的话，我还写个啥博客呀），于是我好好的去了解了hexo的一些原理，即：</p>
-<ul>
-<li><code>hexo g</code>为构建项目，若果没有的话项目无法运行</li>
-<li><code>hexo d</code>为复制本地的项目并上传</li>
-<li><code>hexo clean</code>为清除本地项目</li>
-</ul>
-<p>所以尝试了把CNAME放在本地的public后hexo d，这次终于不用设置github了但，public是在<code>hexo g</code>后生成的，考虑到会经常使用它，所以这个方法还是无效的</p>
-<p>再又一段时间的了解下，发现public是从<code>themes\butterfly\source</code>下的资源生成的之后，CNAME的问题才迎刃而解，即</p>
-<p>在hexo g之前若果需要设置Pages，请把CNAME文件预先放置于<code>themes\butterfly\source</code>下，在hexo g时public就会出现CNAME！</p>
-<hr>
-<h3 id="hexo-d"><a href="#hexo-d" class="headerlink" title="hexo d"></a>hexo d</h3><p>在本地部署好hexo与github之后，想要hexo d我们还需要一个包并在_config.yml设置项目的去向</p>
-<ul>
-<li><p>在项目下<code>npm install --save hexo-deployer-git</code></p>
-</li>
-<li><p>修改（添加）_config.yml：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span> </span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:..github.io.git</span> <span class="comment">#该为自己仓库的上传链接，没有必要请勿设置https类型的</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span> <span class="comment">#如果项目不在main的话可以修改</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试基础（一）—— 软件生命周期</title>
-    <url>/2021/06/22/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E5%88%9D%E5%85%A5%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="软件的生命周期"><a href="#软件的生命周期" class="headerlink" title="软件的生命周期"></a>软件的生命周期</h3><ul>
-<li>瀑布型生命周期（<code>最早</code>软件生命周期）</li>
-</ul>
-<p><img src="https://gitee.com/konghi1949/my_img/raw/master/img/1189851-20190401153904371-1721650287.png"></p>
-<ul>
-<li>V模型</li>
-</ul>
-<p><img src="https://gitee.com/konghi1949/my_img/raw/master/img/1189851-20190401161519951-776380355.png"></p>
-<p>V模型适用于一些传统信息系统应用的开发，只是在一一对应做用户需求分析时编写验收测试用例等等，<code>未执行</code>，测试还是放在编码的后面，所以它并不是敏捷开发</p>
-<ul>
-<li>W模型</li>
-</ul>
-<p><img src="https://gitee.com/konghi1949/my_img/raw/master/img/image-20210622212158003.png" alt="image-20210622212158003"></p>
-<p>由图可以看出来开发与测试是同步进行的，有利于在早期发现问题，属于敏捷开发，也符合<code>测试应今早介入</code>的测试原则，这也是目前主流的软件开发与测试核心理念</p>
-<ul>
-<li>敏捷开发模型</li>
-</ul>
-<p><img src="https://gitee.com/konghi1949/my_img/raw/master/img/1189851-20190401195656383-1246309164.png"></p>
-<p>现<code>主流</code>模型，一种以用户需求进化为核心（强调沟通、弱化文档）、迭代、循序渐进的开发方法。强调以人为本，专注于交付对客户有价值的软件。是一个用于开发和维持复杂产品的框架 </p>
-<p>图片与一些资料来自网络，侵删</p>
-]]></content>
-      <tags>
-        <tag>测试</tag>
       </tags>
   </entry>
   <entry>
@@ -150,6 +96,60 @@
 <li>杀虫剂悖论：对软件进行越多的测试，那么该软件对软件测试人员的测试就越具有免疫力</li>
 <li>测试活动依赖于测试背景（场景）</li>
 </ul>
+]]></content>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在hexo搭建时踏过的一些坑——CNAME与hexo d</title>
+    <url>/2021/06/22/%E5%9C%A8hexo%E6%90%AD%E5%BB%BA%E6%97%B6%E8%B8%8F%E8%BF%87%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="CNAME"><a href="#CNAME" class="headerlink" title="CNAME"></a>CNAME</h3><p>在<code>hexo d</code>上传我们的hexo项目至Github或者Gitee后还需要设置page为自己需要的域名，例我的域名为<code>sut-blog.top</code>设置在我的源码Github.io项目的Pages：<img src="https://gitee.com/konghi1949/my_img/raw/master/img/image-20210622193051719.png" alt="image-20210622193051719"></p>
+<p>此时会在项目下生成一个<code>CNAME</code>，内容为我的域名，项目成功使用我的域名登录，yes！！！但当我以为一切都会顺利，在本地写第一篇博客并<code>hexo g &amp; hexo d</code>，访问它时挂了，然后返回github一看，CNAME不见了，需要在Pages重新设置（我的天，如果每次更新都需要设置Pages的话，我还写个啥博客呀），于是我好好的去了解了hexo的一些原理，即：</p>
+<ul>
+<li><code>hexo g</code>为构建项目，若果没有的话项目无法运行</li>
+<li><code>hexo d</code>为复制本地的项目并上传</li>
+<li><code>hexo clean</code>为清除本地项目</li>
+</ul>
+<p>所以尝试了把CNAME放在本地的public后hexo d，这次终于不用设置github了但，public是在<code>hexo g</code>后生成的，考虑到会经常使用它，所以这个方法还是无效的</p>
+<p>再又一段时间的了解下，发现public是从<code>themes\butterfly\source</code>下的资源生成的之后，CNAME的问题才迎刃而解，即</p>
+<p>在hexo g之前若果需要设置Pages，请把CNAME文件预先放置于<code>themes\butterfly\source</code>下，在hexo g时public就会出现CNAME！</p>
+<hr>
+<h3 id="hexo-d"><a href="#hexo-d" class="headerlink" title="hexo d"></a>hexo d</h3><p>在本地部署好hexo与github之后，想要hexo d我们还需要一个包并在_config.yml设置项目的去向</p>
+<ul>
+<li><p>在项目下<code>npm install --save hexo-deployer-git</code></p>
+</li>
+<li><p>修改（添加）_config.yml：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span> </span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:..github.io.git</span> <span class="comment">#该为自己仓库的上传链接，没有必要请勿设置https类型的</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span> <span class="comment">#如果项目不在main的话可以修改</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试基础（一）—— 软件生命周期</title>
+    <url>/2021/06/22/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E5%88%9D%E5%85%A5%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="软件的生命周期"><a href="#软件的生命周期" class="headerlink" title="软件的生命周期"></a>软件的生命周期</h3><ul>
+<li>瀑布型生命周期（<code>最早</code>软件生命周期）</li>
+</ul>
+<p><img src="https://gitee.com/konghi1949/my_img/raw/master/img/1189851-20190401153904371-1721650287.png"></p>
+<ul>
+<li>V模型</li>
+</ul>
+<p><img src="https://gitee.com/konghi1949/my_img/raw/master/img/1189851-20190401161519951-776380355.png"></p>
+<p>V模型适用于一些传统信息系统应用的开发，只是在一一对应做用户需求分析时编写验收测试用例等等，<code>未执行</code>，测试还是放在编码的后面，所以它并不是敏捷开发</p>
+<ul>
+<li>W模型</li>
+</ul>
+<p><img src="https://gitee.com/konghi1949/my_img/raw/master/img/image-20210622212158003.png" alt="image-20210622212158003"></p>
+<p>由图可以看出来开发与测试是同步进行的，有利于在早期发现问题，属于敏捷开发，也符合<code>测试应今早介入</code>的测试原则，这也是目前主流的软件开发与测试核心理念</p>
+<ul>
+<li>敏捷开发模型</li>
+</ul>
+<p><img src="https://gitee.com/konghi1949/my_img/raw/master/img/1189851-20190401195656383-1246309164.png"></p>
+<p>现<code>主流</code>模型，一种以用户需求进化为核心（强调沟通、弱化文档）、迭代、循序渐进的开发方法。强调以人为本，专注于交付对客户有价值的软件。是一个用于开发和维持复杂产品的框架 </p>
+<p>图片与一些资料来自网络，侵删</p>
 ]]></content>
       <tags>
         <tag>测试</tag>
