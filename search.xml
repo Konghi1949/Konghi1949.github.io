@@ -5,11 +5,18 @@
     <url>/2021/06/21/%E4%BD%A0%E5%A5%BD%EF%BC%8C%E5%A4%A9%E7%89%A9%E5%B0%8F%E7%AB%992-0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h3><p>在几个月前搭建的天物小站1.0（Notion + nextjs-notion-starter-kit + vercal搭建），最近不知道为什么经常性的上不去，所以才想到使用hexo，虽然1.0因为是用notion的记东西十分方便，不过上不去就十分的蛋疼了，所有这就是天物小站2.0的来源</p>
 <h3 id="关于2-0"><a href="#关于2-0" class="headerlink" title="关于2.0"></a>关于2.0</h3><ul>
-<li>hexo(butterfly) + github + 域名</li>
-<li>图床gitee + PicGo</li>
-<li>会整合小站1.0的文章再精校并添加新内容再发布到2.0</li>
-<li>若有梯子的朋友们可以继续上1.0</li>
-<li>1.0 与 2.0 可能会同步更新（也可能不会）</li>
+<li><p><input checked="" disabled="" type="checkbox">  hexo(butterfly) + github + 域名</p>
+</li>
+<li><p>hexo(cactus) + github + 域名</p>
+</li>
+<li><p>图床gitee + PicGo</p>
+</li>
+<li><p>会整合小站1.0的文章再精校并添加新内容再发布到2.0</p>
+</li>
+<li><p>若有梯子的朋友们可以继续上1.0</p>
+</li>
+<li><p>1.0 与 2.0 可能会同步更新（也可能不会）</p>
+</li>
 </ul>
 <h3 id="一些话"><a href="#一些话" class="headerlink" title="一些话"></a>一些话</h3><ul>
 <li>希望自己不断进步吧</li>
